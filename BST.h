@@ -20,15 +20,15 @@ typedef struct
 void insertNode(BST *, int);
 /*
 void insertNode_R(TreeNodePtr * t,int value){
-  if(t==NULL){
+   if(t==NULL){
    t=new TreeNode;
-    if(t){
+   if(t){
       t->leftPtr=NULL;
       t->rightPtr=NULL;
       t->data=value;
    }
-  }
-  else{
+}
+else{
      if(t->data>=value) //left
 
      else //right
