@@ -124,22 +124,21 @@ void postOrder(TreeNodePtr treePtr)
    } // end if
 } // end
 
-void showTree(TreeNodePtr treePtr, int space)
+void showTree(TreeNodePtr treePtr, int level)
 {
-   if (treePtr == NULL)
-      return;
+   if (treePtr != NULL)
+   {
+      // Print right of tree
+      showTree(treePtr->rightPtr, level + 1);
 
-   space += 3; // Increase distance between levels
+      // Print current node
+      for (int i = 0; i < level; i++)
+      {
+         printf("   ");
+      }
+      printf("%3d\n", treePtr->data);
 
-   // Print right subtree first (so it appears on the right)
-   showTree(treePtr->rightPtr, space);
-
-   // Print current node with indentation
-   printf("\n");
-   for (int i = 5; i < space; i++)
-      printf(" ");
-   printf("%3d\n", treePtr->data);
-
-   // Print left subtree
-   showTree(treePtr->leftPtr, space);
+      // Print left of tree
+      showTree(treePtr->leftPtr, level + 1);
+   }
 }
