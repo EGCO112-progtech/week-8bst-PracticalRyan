@@ -10,31 +10,18 @@ int main(int argc, char **argv)
 
    b.root = NULL;
    b.size = 0; // tree initially empty
-   for (i = 2; i < argc; ++i)
+   for (i = 1; i < argc; ++i)
    {
       insertNode(&b, atoi(argv[i]));
       //  insertNode_R(&b.root,atoi(argv[i]) );
    } // end for
 
-   if (strcmp(argv[1], "inOrder") == 0)
-   {
-      printf("\nThe inOrder traversal is:\n");
-      inOrder(b.root);
-   }
-   else if (strcmp(argv[1], "postOrder") == 0)
-   {
-      printf("\nThe postOrder traversal is:\n");
-      postOrder(b.root);
-   }
-   else if (strcmp(argv[1], "preOrder") == 0)
-   {
-      printf("\nThe preOrder traversal is:\n");
-      preOrder(b.root);
-   }
-   else
-   {
-      printf("Invalid Input");
-   }
+   printf("\ninOrder\n");
+   inOrder(b.root);
+   printf("\npostOrder\n");
+   postOrder(b.root);
+   printf("\npreOrder\n");
+   preOrder(b.root);
    /*
       // traverse the tree postOrder
       printf("\nThe postnOrder traversal is:\n" );   postOrder( rootPtr );
