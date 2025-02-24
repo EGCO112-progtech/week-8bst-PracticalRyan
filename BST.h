@@ -118,8 +118,10 @@ void postOrder(TreeNodePtr treePtr)
    // if tree is not empty, then traverse
    if (treePtr != NULL)
    {
-      preOrder(treePtr->leftPtr);   // Recursion to the right
-      preOrder(treePtr->rightPtr);  // Recursion to the left
+      preOrder(treePtr->leftPtr); // Recursion to the right
+
+      preOrder(treePtr->rightPtr); // Recursion to the left
+
       printf("%3d", treePtr->data); // print the value
 
    } // end if
