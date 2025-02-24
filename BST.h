@@ -90,7 +90,6 @@ void inOrder(TreeNodePtr treePtr)
    // if tree is not empty, then traverse
    if (treePtr != NULL)
    {
-
       inOrder(treePtr->leftPtr); // Recursion to the left
 
       printf("%3d", treePtr->data); // print the value
@@ -109,7 +108,6 @@ void preOrder(TreeNodePtr treePtr)
       preOrder(treePtr->leftPtr); // Recursion to the left
 
       preOrder(treePtr->rightPtr); // Recursion to the right
-
    } // end if
 } // end
 
@@ -123,6 +121,25 @@ void postOrder(TreeNodePtr treePtr)
       postOrder(treePtr->rightPtr); // Recursion to the left
 
       printf("%3d", treePtr->data); // print the value
-
    } // end if
 } // end
+
+void showTree(TreeNodePtr treePtr, int space)
+{
+   if (treePtr == NULL)
+      return;
+
+   space += 3; // Increase distance between levels
+
+   // Print right subtree first (so it appears on the right)
+   showTree(treePtr->rightPtr, space);
+
+   // Print current node with indentation
+   printf("\n");
+   for (int i = 5; i < space; i++)
+      printf(" ");
+   printf("%3d\n", treePtr->data);
+
+   // Print left subtree
+   showTree(treePtr->leftPtr, space);
+}
